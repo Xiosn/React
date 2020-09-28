@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js" ></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" ></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+
+<script type="text/babel">
+ 
+    let message = 'Hello Word'
+    function textClick() {
+        message = 'Hello React'
+        render()
+    }
+
+    function render() {
+            ReactDOM.render(
+            <div>
+                <h1>{message}</h1>
+                <button onClick={textClick}>改变文本</button>
+            </div>,
+            document.getElementById('root')
+        )
+    }
+
+    render()
+
+</script>

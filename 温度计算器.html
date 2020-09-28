@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+    <!-- <h1>hello Word</h1> -->
+    <div id='root'></div>
+</body>
+</html>
+<script type="text/babel">
+
+ function BoilingVerdict(props) {
+  if(props.celsius >= 100) {
+    return <p> 已到达沸点</p>
+  }
+  return <p>未到达沸点</p>
+ }
+
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      temperature: ''
+    }
+  }
+
+  handleChange(e) {
+    this.setState({
+      temperature:e.target.value
+    })
+  }
+
+  render() {
+    const temperature = this.state.temperature;
+    return (
+      <fieldset>
+        <input value={temperature} onChange={this.handleChange}/>
+        <BoilingVerdict celsius={parseFloat(temperature)}/>  
+      </fieldset>
+    )
+  }
+}
+
+
+ ReactDOM.render (
+   <Calculator/>,
+   document.getElementById('root')
+ )
+</script>
