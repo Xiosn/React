@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const names = ['adb', 'aas', 'ews', 'sdd']
+        /*
+            回调函数有三个参数：
+            参数一：执行时的对应函数
+            参数二：对应的下标值
+            参数三：完整的数组对象
+        */
+        const newNames = names.map((item, index, arr) => {
+            return item + '0000'
+        })
+
+        console.log(newNames);
+    </script>
+
+</body>
+</html>
