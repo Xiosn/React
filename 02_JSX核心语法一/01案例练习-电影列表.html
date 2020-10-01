@@ -30,7 +30,11 @@ class App extends React.Component {
             <div>
                 <h1>{this.state.message}</h1>
                 <ul>
-                    <li></li>
+                    {
+                        this.state.movies.map(item=>{
+                            return <li>{item}</li>
+                        })
+                    }
                 </ul>
             </div>
         )
