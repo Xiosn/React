@@ -48,8 +48,14 @@ class App extends React.Component {
                 <h1>{this.state.age}</h1>
                 <h1>{this.state.names}</h1>
                 <h1>{this.state.names[0]}</h1>
-
                 <h1>{this.state.friend.name}</h1>
+
+                {/*
+                    null默认不显示 可使用toString()方法转字符串
+                    没有toString()方法 在后面添加 "" 将其隐式转化
+                */}
+                
+                <h1>{this.state.test1 + ''}</h1>
             </div>
         )
     }
