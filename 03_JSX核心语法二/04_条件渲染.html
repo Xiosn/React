@@ -27,10 +27,12 @@ class App extends React.Component {
     }
 
     render() {
+        let {isLogin}=this.state;
+
         // 1 通过if判断： 逻辑代码非常多的情况
         let welcome =null;
         let btnText = null;
-        if(this.state.isLogin) {
+        if(isLogin) {
             welcome = <h2>欢迎回来~</h2>
             btnText = "退出";
         }else {
@@ -40,7 +42,11 @@ class App extends React.Component {
         return (
             <div>
                 {welcome}
-                <button onClick={()=>this.loginClick()}>{this.state.isLogin?'退出':'登录'}</button>
+                <button onClick={()=>this.loginClick()}>{isLogin?'退出':'登录'}</button>
+                <hr/>
+
+                {/* 逻辑与： 一个条件不成立，后面的条件都不会进行判断了*/}
+                <h2>{isLogin && '你好 Xiosn'}</h2>
             </div>
         )
     }
