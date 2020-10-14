@@ -33,7 +33,13 @@ class App extends React.Component {
                     {
                         this.state.movies.map((item, index, arr) => {
                             {/*传参的时候携带event事件*/}
-                            return <li onClick={ (e)=>{ this.liClick(item, index, e) } }>{item}</li>
+                            return (
+                                <li className="myLiClass"
+                                    title='li'
+                                    onClick={ (e)=>{ this.liClick(item, index, e) } }>
+                                    {item}
+                                </li>
+                            )
                         })
                     }
                 </ul>
