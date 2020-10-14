@@ -18,7 +18,9 @@
 class App extends React.Component {
     constructor(props) {
         super(props)
-        this.btn2 = this.btn2.bind(this)
+        this.state = {
+            movies:['盗梦空间', '流浪地球', '虹猫蓝兔七侠传', '使徒行者3']
+        }
     }
 
     render() {
@@ -26,12 +28,25 @@ class App extends React.Component {
             <div>
                 {/* 绑定事件方式四 在箭头函数中绑定 事件方法*/}
                 <button onClick={ () => { this.btnClick(event) } }>方式四</button>
+
+                <ul>
+                    {
+                        this.state.movies.map((item, index, arr) => {
+                            {/*传参的时候携带event事件*/}
+                            return <li onClick={ (e)=>{ this.liClick(item, index, e) } }>{item}</li>
+                        })
+                    }
+                </ul>
             </div>
         )
     }
 
     btnClick(event) {//点击事件默认自带的event参数 react中的合成对象 非js原生事件对象
         console.log(event);
+    }
+
+    liClick(item, index, event) {
+        console.log(item,index,event)
     }
  }
 
