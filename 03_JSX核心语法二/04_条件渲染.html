@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 1.引入的依赖 -->
+<script src="../react/react.development.js"></script>
+<script src="../react/react-dom.development.js"></script>
+<script src="../react/babel.min.js"></script>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+
+<!-- 2.编写react代码 -->
+<script type="text/babel">
+class App extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            isLogin:false
+        }
+    }
+
+    render() {
+        // 1 通过if判断： 逻辑代码非常多的情况
+        let welcome =null;
+        let btnText = null;
+        if(this.state.isLogin) {
+            welcome = <h2>欢迎回来~</h2>
+            btnText = "退出";
+        }else {
+            welcome = <h2>请先登录~</h2>
+            btnText = "登录";
+        }
+        return (
+            <div>
+                {welcome}
+                <button onClick={()=>this.loginClick()}>{this.state.isLogin?'退出':'登录'}</button>
+            </div>
+        )
+    }
+
+    loginClick() {
+        this.setState({
+            isLogin:!this.state.isLogin
+        })
+    }
+}
+ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+)
+</script>
