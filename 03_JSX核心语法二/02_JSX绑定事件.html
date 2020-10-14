@@ -32,6 +32,9 @@ class App extends React.Component {
 
                 {/*绑定事件方式三 箭头函数 this上下文中查找 的方式三 */}
                 <button onClick={this.btn3}>方式三</button>
+
+                {/* 绑定事件方式四 在箭头函数中绑定 事件方法*/}
+                <button onClick={ () => { this.btn4() } }>方式四</button>
             </div>
         )
     }
@@ -45,6 +48,10 @@ class App extends React.Component {
 
     btn3=()=> {
         console.log('方式三');
+    }
+
+    btn4() {
+        console.log('方式四');
     }
  }
 
