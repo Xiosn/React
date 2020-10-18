@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const counts = [1,323,23,124,656,7,45,68,93,23]
+        /*
+            回调函数有三个参数：
+            参数一：执行时的对应函数
+            参数二：对应的下标值
+            参数三：完整的数组对象
+        */
+
+        //对数组执行过滤操作
+        const newNum = counts.filter((item, index, arr)=>{
+            return item>50
+        })
+
+        console.log(newNum);
+    </script>
+
+</body>
+</html>
