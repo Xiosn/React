@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 1.引入的依赖 -->
+<script src="../react/react.development.js"></script>
+<script src="../react/react-dom.development.js"></script>
+<script src="../react/babel.min.js"></script>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+<script src="./format_util.js"></script>
+<!-- 2.编写react代码 -->
+<script type="text/babel">
+class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+          books:[{
+            id:1,
+            name:"《JavaScript高级程序设计》",
+            date:'2020-10',
+            price:85,
+            count:1
+          },
+          {
+            id:2,
+            name:"《漫画算法》",
+            date:'2008-10',
+            price:89,
+            count:3
+          },
+          {
+            id:3,
+            name:"《TypeScript项目实战》",
+            date:'2011-10',
+            price:99,
+            count:2
+          },
+          {
+            id:4,
+            name:"《ES6标准入门》",
+            date:'2015-10',
+            price:105,
+            count:5
+          }]
+        }
+    }
+
+    render() {
+
+        return (
+            <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>书籍名称</th>
+                      <th>出版日期</th>
+                      <th>价格</th>
+                      <th>购买数量</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      this.state.books.map((item,index)=> {
+                        return (
+                          <tr>
+                            <td>{index+1}</td>
+                            <td>{item.name}</td>
+                            <td>{item.date}</td>
+                            <td>{formatPrice(item.price)}</td>
+                            <td>
+                              <button onClick={()=>{this.decrement()}}>-</button>
+                              <span className="count">{item.count}</span>
+                              <button onClick={()=>{this.increment()}}>+</button>
+                            </td>
+                            <td><button>移除</button></td>
+                          </tr>
+                        )
+                      })
+                    }
+                  </tbody>
+                </table>
+            </div>
+        )
+    }
+
+    increment() { //加
+      console.log('++++++++');
+    }
+    decrement() { //减
+      console.log('---------  ');
+    }
+}
+ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+)
+</script>
+<style>
+  table {
+    border: 1px solid #eee;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  th, td {
+    border: 1px solid #eee;
+    padding: 10px 16px;
+  }
+  th {
+    background-color: #aaa;
+  }
+  .count{
+    margin: 0 5px;
+  }
+</style>
