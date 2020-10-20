@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  var obj = [{
+    name:'JavaScript高级程序设计',
+    price:99,
+    count:2
+  },
+  {
+    name:'ES6标准入门',
+    price:85,
+    count:6
+  },
+  {
+    name:'疯狂Java讲义',
+    price:89,
+    count:5
+  },
+  {
+    name:'TypeScript项目实战',
+    price:88,
+    count:3
+  }]
+
+
+  // const totalPrice = obj.reduce(回调函数，初始值)
+
+
+  /*
+    reduce高阶函数（回调函数，初始化值）
+    回调函数有三个参数（preValue, item, index）
+      每次将上一次回调函数的结果传入回调函数的第一个参数中
+
+    回调函数的参数：
+    参数一：上一次回调函数的结果（第一次没有上一次回调函数的结果，使用初始化值）
+  */
+  const totalPrice = obj.reduce((preValue, item, index)=>{
+    return preValue + item.price * item.count;
+  },0)
+
+  console.log(totalPrice);
+</script>
