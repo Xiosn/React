@@ -52,8 +52,9 @@ class App extends React.Component {
         }
     }
 
-    renderBooks() {
-        return  (
+    render() {
+
+        return (
             <div>
                 <table>
                   <thead>
@@ -92,14 +93,6 @@ class App extends React.Component {
         )
     }
 
-    renderEmptyTip() {
-      return <h2>购物车为空~</h2>
-    }
-
-    render() {
-        return this.state.books.length ? this.renderBooks() : this.renderEmptyTip()
-    }
-
     getTotalPrice() {
     //   1.for循环的方式
     //   let totalPrice = 0;
@@ -116,8 +109,9 @@ class App extends React.Component {
     }
 
     deleteData(index) {//移除
+      const newData = this.state.books;
       this.setState({
-        books: this.state.books.filter((item,indey)=>{return index != indey})
+        books: newData.filter((item,indey)=>{return indey != index})
       })
     }
 }
