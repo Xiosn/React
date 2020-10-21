@@ -101,13 +101,18 @@ class App extends React.Component {
     //   }
     //   return formatPrice(totalPrice);
     // filter
+
+    const totalPrice = this.state.books.reduce((preValue, item, index)=> {
+        return preValue + item.count * item.price
+      },0)
+      return formatPrice(totalPrice)
     }
 
     increment() { //加
       console.log('++++++++');
     }
     decrement() { //减
-      console.log('---------  ');
+      console.log('---------');
     }
 }
 ReactDOM.render(
