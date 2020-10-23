@@ -22,28 +22,28 @@ class App extends React.Component {
         super(props);
         this.state={
           books:[{
-            id:1,
+            id:0,
             name:"《JavaScript高级程序设计》",
             date:'2020-10',
             price:85,
             count:1
           },
           {
-            id:2,
+            id:1,
             name:"《漫画算法》",
             date:'2008-10',
             price:89,
             count:3
           },
           {
-            id:3,
+            id:2,
             name:"《TypeScript项目实战》",
             date:'2011-10',
             price:99,
             count:2
           },
           {
-            id:4,
+            id:3,
             name:"《ES6标准入门》",
             date:'2015-10',
             price:105,
@@ -51,10 +51,8 @@ class App extends React.Component {
           }]
         }
     }
-
-    render() {
-
-        return (
+    renderBooks() {
+      return (
             <div>
                 <table>
                   <thead>
@@ -77,7 +75,7 @@ class App extends React.Component {
                             <td>{item.date}</td>
                             <td>{formatPrice(item.price)}</td>
                             <td>
-                              <button onClick={()=>{this.countVariety(index, -1)}}>-</button>
+                              <button disabled={item.count<=1} onClick={()=>{this.countVariety(index, -1)}}>-</button>
                               <span className="count">{item.count}</span>
                               <button onClick={()=>{this.countVariety(index, +1)}}>+</button>
                             </td>
@@ -88,9 +86,17 @@ class App extends React.Component {
                     }
                   </tbody>
                 </table>
-                <h2>总价格：{this.getTotalPrice()} 元</h2>
+                <h2>总价格：{this.getTotalPrice()}</h2>
             </div>
         )
+    }
+
+    renderEmptyTip() {
+      return <h2>购物车清空啦~</h2>
+    }
+
+    render() {
+        return this.state.books.length ? this.renderBooks() : this.renderEmptyTip()
     }
 
     getTotalPrice() {//总价格
@@ -115,13 +121,16 @@ class App extends React.Component {
     }
 
     countVariety(index, count) {//书籍数量加减
-    // const newBooks = [...this.state.books];
+    const newBooks = [...this.state.books];
     // newBooks[index].count+=count
     //   this.setState({
     //     books:newBooks
     //   })
+    newBooks.filter((item)=>{return item.id===index}).map((item)=>{return item.count+=count})
 
-      this.setState
+      this.setState({
+        books: newBooks
+      })
     }
 }
 ReactDOM.render(
