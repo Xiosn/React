@@ -77,9 +77,9 @@ class App extends React.Component {
                             <td>{item.date}</td>
                             <td>{formatPrice(item.price)}</td>
                             <td>
-                              <button>-</button>
+                              <button onClick={()=>{this.countVariety(index, -1)}}>-</button>
                               <span className="count">{item.count}</span>
-                              <button>+</button>
+                              <button onClick={()=>{this.countVariety(index, +1)}}>+</button>
                             </td>
                             <td><button onClick={()=>{this.deleteData(index)}}>移除</button></td>
                           </tr>
@@ -93,7 +93,7 @@ class App extends React.Component {
         )
     }
 
-    getTotalPrice() {
+    getTotalPrice() {//总价格
     //   1.for循环的方式
     //   let totalPrice = 0;
     //   for(let item of this.state.books) {
@@ -109,10 +109,19 @@ class App extends React.Component {
     }
 
     deleteData(index) {//移除
-      const newData = this.state.books;
       this.setState({
-        books: newData.filter((item,indey)=>{return indey != index})
+        books: this.state.books.filter((item,indey)=>{return indey != index})
       })
+    }
+
+    countVariety(index, count) {//书籍数量加减
+    // const newBooks = [...this.state.books];
+    // newBooks[index].count+=count
+    //   this.setState({
+    //     books:newBooks
+    //   })
+
+      this.setState
     }
 }
 ReactDOM.render(
