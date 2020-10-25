@@ -10,8 +10,8 @@ import React, { Component } from 'react'
   5 布尔类型或null 什么都不渲染
 */
 
-export default class App extends Component {
-  render() {
-    return aaa
-  }
-}
+// export default class App extends Component {
+//   render() {
+//     return <h2>AAA</h2>
+//   }
+// }
