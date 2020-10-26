@@ -11,8 +11,8 @@ function ChildCpn(props) {
   )
 }
 
-ChildCpn.propTypes={
-  name:PropTypes.string,
+ChildCpn.propTypes={//isRequired 必须传
+  name:PropTypes.string.isRequired,
   age:PropTypes.number,
   height:PropTypes.number
 }
