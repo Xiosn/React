@@ -17,12 +17,20 @@ ChildCpn.propTypes={//isRequired 必须传
   height:PropTypes.number
 }
 
+ChildCpn.defaultProps= {//  默认值
+  name: '胡歌',
+  age: 37,
+  height: 1.88
+}
+
 export default class App extends Component {
   render() {
     return (
       <div>
-        <ChildCpn name='xiosn' age="18" height='1.88'/>
-        <ChildCpn name='xiaohs' age='20' height='1.85'/>
+        <ChildCpn name='xiosn' age={18} height={1.88}/>
+        <ChildCpn name='xiaohs' age={20} height={1.85}/>
+        <hr/>
+        <ChildCpn/>
       </div>
     )
   }
