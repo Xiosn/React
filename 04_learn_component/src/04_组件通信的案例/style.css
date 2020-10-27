@@ -1,0 +1,14 @@
+.TabControl {
+  display: flex;
+  height: 44px;
+  line-height: 44px;
+}
+
+.tab_item {
+flex: 1;
+text-align: center;
+}
+
+.active {
+  color: red;
+}

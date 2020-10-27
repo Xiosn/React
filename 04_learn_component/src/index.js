@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './04_组件通信的案例/style.css';
 
 // import App from './01_组件的定义方式/01_组件的定义';
 // import App from './02_组件的生命周期/App';
