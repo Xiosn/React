@@ -3,12 +3,17 @@
   height: 44px;
   line-height: 44px;
 }
-
 .tab_item {
 flex: 1;
 text-align: center;
 }
-
 .active {
   color: red;
+}
+span {
+  padding: 5px;
+}
+
+.active span{
+  border-bottom: 3px solid red;
 }

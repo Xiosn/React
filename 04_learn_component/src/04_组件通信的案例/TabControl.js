@@ -19,7 +19,7 @@ export default class TabControl extends Component {
               <div key={index}
                className={'tab_item ' + (index===currentIndex?'active':'')}
                onClick={()=>{this.tabClick(index)}}>
-                {item}
+                <span>{item}</span>
               </div>
             )
           })
@@ -29,8 +29,12 @@ export default class TabControl extends Component {
   }
 
   tabClick(index) {
-    console.log(index);
-  }
+    this.setState({
+      currentIndex: index
+    })
+    const {itemClick} = this.props;
+    itemClick(index);
+  } 
 }
 
 TabControl.propTypes= {
