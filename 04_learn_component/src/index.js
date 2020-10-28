@@ -10,8 +10,9 @@ import './04_组件通信的案例/style.css';
 // import App from './03_组件之间的通信/04_父传子通信-属性验证';
 // import App from './03_组件之间的通信/05_子传父通信-函数传递';
 // import App from './04_组件通信的案例/App';
-import App from './05_React中实现slot/App';
 
-import './05_React中实现slot/style.css'
+// import App from './05_React中实现slot/App';
+// import './05_React中实现slot/style.css'
 
+import App from './06_跨组件的通信/01_跨组件通信-props';
 ReactDOM.render( <App />, document.getElementById('root'));
