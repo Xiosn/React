@@ -4,21 +4,29 @@ const UserContext = React.createContext({
     nickName:'我是默认值',
     level:-1
 })
+const ThemeContext = React.createContext({
+  color:'red'
+})
 
-/**
- * 函数组件的共享写法
- * UserContext.Consumer
- */
 function ProfileHeader() {
   return (
     <UserContext.Consumer>
       {
       value=>{
         return (
-          <div>
-          <h2>我的昵称：{value.nickName}</h2>
-          <h2>我的等级：{value.level}</h2>
-        </div>
+          <ThemeContext.Consumer>
+            {
+              theme=>{
+                return (
+                  <div>
+                    <h2 style={{color:theme.color}}>我的昵称：{value.nickName}</h2>
+                    <h2>我的等级：{value.level}</h2>
+                    <h2>颜色儿：{theme.color}</h2>
+                  </div>
+                )
+              }
+            }
+          </ThemeContext.Consumer>
         )
       }
     }
@@ -52,7 +60,9 @@ export default class App extends Component {
     return ( 
       <div>
         <UserContext.Provider value={this.state}>
-          <ProFile/>
+          <ThemeContext.Provider value={{color:'red'}}>
+            <ProFile/>
+          </ThemeContext.Provider>
         </UserContext.Provider>
       </div>
     )
