@@ -14,5 +14,6 @@ import './04_组件通信的案例/style.css';
 // import App from './05_React中实现slot/App';
 // import './05_React中实现slot/style.css'
 
-import App from './06_跨组件的通信/01_跨组件通信-props';
+// import App from './06_跨组件的通信/01_跨组件通信-props';
+import App from './06_跨组件的通信/01_跨组件通信-content';
 ReactDOM.render( <App />, document.getElementById('root'));

@@ -34,10 +34,10 @@ export default class App extends Component {
       nickName:'kobe',
       level:99
     }
-  }
+  } 
   render() {
     // const {nickName, level} = this.state;
-    return (
+    return ( 
       <div>
         {/* <ProFile nickName={nickName} level={level}/> */}
         <ProFile {...this.state}/>
