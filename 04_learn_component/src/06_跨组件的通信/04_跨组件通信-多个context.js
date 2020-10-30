@@ -7,7 +7,10 @@ const UserContext = React.createContext({
 const ThemeContext = React.createContext({
   color:'red'
 })
-
+/**
+ * 唉 就是XX.Consumer的多层嵌套，不提倡
+ * 听说redux？？？下节学习
+ */
 function ProfileHeader() {
   return (
     <UserContext.Consumer>
