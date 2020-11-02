@@ -19,7 +19,8 @@ import './04_组件通信的案例/style.css';
 // import App from './06_跨组件的通信/01_跨组件通信-content函数用法';
 // import App from './06_跨组件的通信/04_跨组件通信-多个context';
 // import App from './07_setStste的使用/01_为什么使用setState'
-import App from './07_setStste的使用/02_setState是异步更新'
+// import App from './07_setStste的使用/02_setState是异步更新'
+import App from './07_setStste的使用/05_setState本身的合并';
 
 
 ReactDOM.render( <App />, document.getElementById('root'));
