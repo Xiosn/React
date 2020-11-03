@@ -45,6 +45,10 @@ function Footer() {
   return <h2>我是Footer组件</h2>
 }
 
+/**
+ * 当你仅仅只是想更改当前计数的时候
+ * 所有的子组件都会被执行一次render函数 这是非常消耗性能的
+ */
 
 export default class App extends Component {
   constructor(props) {
