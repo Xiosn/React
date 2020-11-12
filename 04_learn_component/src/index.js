@@ -24,7 +24,8 @@ import './04_组件通信的案例/style.css';
 // import App from './08_React性能优化/04_PureComponent';
 // import App from './08_React性能优化/05_memo的使用'
 // import App from './09_前面知识点补充/01_setState不可变的力量'
-import App from './09_前面知识点补充/02_全局事件传递'
+// import App from './09_前面知识点补充/02_全局事件传递'
+import App from './10_受控和非受控组件/01_refs的使用';
 
 
 ReactDOM.render( <App />, document.getElementById('root'));
