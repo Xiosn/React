@@ -27,7 +27,7 @@ import './04_组件通信的案例/style.css';
 // import App from './09_前面知识点补充/02_全局事件传递'
 // import App from './10_受控和非受控组件/01_refs的使用';
 // import App from './10_受控和非受控组件/02_受控组件的基本使用'
-import App from './10_受控和非受控组件/03_受控组件-select的使用'
-
+// import App from './10_受控和非受控组件/03_受控组件-select的使用'
+import App from './10_受控和非受控组件/04_受控组件-多输入'
 
 ReactDOM.render( <App />, document.getElementById('root'));
