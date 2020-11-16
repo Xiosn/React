@@ -19,6 +19,7 @@ function enhanceComponent(WrappedComponent) {
       return <WrappedComponent {...this.props}/>
     }
   }
+  NewComponent.displayName = 'kobe';//给组件重新命名
   return NewComponent;
 }
 
