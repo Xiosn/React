@@ -7,10 +7,10 @@ export default class App extends PureComponent {
     this.usernameRef=createRef();
   }
   /**
-   * 受控组件
+   * 非受控组件
    * 
    * 通过 onSubmit 属性来接管 from表单的默认事件 可以用来阻止默认行为
-   * onChange 是获取表单的一个输入状态内容
+   *  再通过ref来获取DOM节点操作
    */
   render() {
     return(
