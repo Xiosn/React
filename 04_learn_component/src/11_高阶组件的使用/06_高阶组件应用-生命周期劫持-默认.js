@@ -26,6 +26,14 @@ class About extends PureComponent {
       </div>
     )
   }
+  componentWillMount() {//即将渲染
+    this.beginTime = Date.now();
+  }
+  componentDidMount() {//渲染完成
+    this.endTime = Date.now();
+    const time = this.endTime - this.beginTime;
+    console.log(`渲染所有时间：${time}`);
+  }
 }
 
 export default class App extends PureComponent {
