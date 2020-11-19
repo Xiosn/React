@@ -35,6 +35,7 @@ import './04_组件通信的案例/style.css';
 // import App from './11_高阶组件的使用/03_高阶组件应用-增强props-默认'
 // import App from './11_高阶组件的使用/04_高阶组件的应用-增强props-改进';
 // import App from './11_高阶组件的使用/05_高阶组价应用-登录鉴权操作'
-import App from './11_高阶组件的使用/06_高阶组件应用-生命周期劫持-默认';
+// import App from './11_高阶组件的使用/06_高阶组件应用-生命周期劫持-默认';
+import App from './11_高阶组件的使用/07_高阶函数应用-生命周期劫持-增强';
 
 ReactDOM.render( <App/>, document.getElementById('root'));
