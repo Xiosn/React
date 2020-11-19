@@ -30,6 +30,10 @@ function withAuth(WrappedComponent) {
   }
 }
 
+/**
+ * 通过在组件传值 isLogin={false} 判断 return 哪个组件
+ */
+
 const AuthCartPage  = withAuth(CartPage);
 export default class App extends PureComponent {
   render() {
