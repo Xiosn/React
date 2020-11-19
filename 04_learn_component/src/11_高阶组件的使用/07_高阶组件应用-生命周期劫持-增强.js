@@ -18,7 +18,7 @@ class About extends PureComponent {
 }
 
 /**
- * 通过高阶函数 可以 省去在每个组件都写一遍一模一样的生命周期方法
+ * 通过高阶组件 可以 省去在每个组件都写一遍一模一样的生命周期方法
  */
 function withRenderTime(WrappedComponent) {
   return class extends PureComponent {
