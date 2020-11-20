@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 
 /**
- * ReactDOM.createPortal()
+ * ReactDOM.createPortal(child,container)
  * 某些情况下 我们希望渲染的内容独立于父组件 甚至是独立于当前挂载到的DOM元素中（默认都是挂载到id为root的DOM元素上）
  * 参数一：（child）是任何可渲染的React子元素 例如一个元素 字符串或fragment
  * 参数二：（container）是一个DOM元素
