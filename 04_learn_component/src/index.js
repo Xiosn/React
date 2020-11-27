@@ -42,6 +42,7 @@ import './04_组件通信的案例/style.css';
 // import App from './12_组件内容·补充/02_portals的使用'
 // import './css/index.css';
 
-import App from './12_组件内容·补充/03_fragments的使用'
+// import App from './12_组件内容·补充/03_fragments的使用'
+import App from './12_组件内容·补充/04_strictMode的使用'
 
 ReactDOM.render( <App/>, document.getElementById('root'));
